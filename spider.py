@@ -62,7 +62,7 @@ def spider(url, word, maxPages):
         #Start from the beginning of our collection of pages
         url = pagesToVisit[1:]
         try :
-            print numberVisited, "Visiting: ", url 
+            print (numberVisited, "Visiting: ", url) 
             parser = LinkParser()
             data, links = parser.getlinks(url)
             if data.find(word)>-1:
@@ -70,9 +70,9 @@ def spider(url, word, maxPages):
                 #Adds pages we found to end of the collection
                 #of pages to visit.
                 pagesToVisit = pagesToVisit + links
-                print "**SUCCESS**"
+                print ("**SUCCESS**")
         except:
-                print "**FAILED**"
+                print ("**FAILED**")
     if foundWord:
         print "The word", word, "was found at:" , url
     else:
